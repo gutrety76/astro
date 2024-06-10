@@ -1,0 +1,5 @@
+/node-service/node_modules 
+/node-service/package-lock.json 
+/ui_service/.next
+/ui_service/node_modules 
+/ui_service/package-lock.json 
