@@ -1,10 +1,8 @@
-#!/usr/bin/env bash
-# wait-for-it.sh
-# Use this script to wait for a service to be ready
+#!/bin/bash
 
+# wait-for-it.sh script to wait for a service to be available
 HOST=$1
 PORT=$2
-
 shift 2
 
 timeout=${WAITFORIT_TIMEOUT:-15}

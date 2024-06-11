@@ -18,6 +18,14 @@ services:
     - /data
     strip_path: true
 
+- name: api_service
+  url: http://api-service:3003
+  routes:
+  - name: node_route
+    paths:
+    - /api-v1
+    strip_path: true
+
 - name: ui_service
   url: http://ui-service:3000
   routes:
