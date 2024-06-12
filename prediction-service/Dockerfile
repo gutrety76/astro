@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     gnupg
 
 # Install Ollama
-RUN curl -sSL https://ollama.ai/install.sh | bash
+# RUN curl -sSL https://ollama.ai/install.sh | bash
 
 # Install Python dependencies
 COPY requirements.txt ./
@@ -31,7 +31,8 @@ RUN chmod +x wait-for-it.sh
 EXPOSE 5000
 
 # Create an entrypoint script to start Ollama and the Python app
-COPY entrypoint.sh /usr/src/app/entrypoint.sh
-RUN chmod +x entrypoint.sh
+# COPY entrypoint.sh /usr/src/app/entrypoint.sh
+# RUN chmod +x entrypoint.sh
 
-CMD ["./entrypoint.sh"]
+# CMD ["./entrypoint.sh"]
+CMD ["./wait-for-it.sh", "rabbitmq", "5672", "--", "python", "prediction.py"]

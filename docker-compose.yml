@@ -100,6 +100,18 @@ services:
       - prediction-service
       - rabbitmq
 
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: hamburg
+      POSTGRES_DB: astro
+    volumes:
+      - ./initdb:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+
+    
   node-service:
     build:
       context: ./node-service

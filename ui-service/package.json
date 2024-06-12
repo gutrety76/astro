@@ -11,6 +11,8 @@
   "dependencies": {
     "next": "14.2.3",
     "react": "^18",
+    "dotenv": "^16.4.5",
+    "enum": "^3.0.4",
     "react-dom": "^18"
   },
   "devDependencies": {

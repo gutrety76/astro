@@ -3,13 +3,12 @@ const { Pool } = require('pg');
 require('dotenv').config();
 
 const Enum = require('enum');
-const { addDays } = require('./helpers');
+const { addDays, zodiac_flags } = require('./helpers');
 
 const app = express();
 const port = 3003;
 
 
-const zodiac_flags = new Enum({'Aquarius': 0, 'Pisces': 1, 'Aries': 2, 'Taurus': 3, 'Gemini': 4, 'Cancer': 5, 'Leo': 6, 'Virgo': 7, 'Libra': 8, 'Scorpio': 9, 'Sagittarius': 10, 'Capricorn': 11}, { ignoreCase: true })
 
 // Middleware to parse JSON bodies
 app.use(express.json());
